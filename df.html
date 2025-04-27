@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Mona Sans;
+      }
+      p {
+        font-size: 20px;
+      }
+      body {
+        background-color: #000;
+      }
+      .grid_container {
+        padding: 4em;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(4, 1fr); */
+        gap: 8px;
+        height: max-content;
+      }
+
+      .item {
+        --border: 240 3.7% 15.9%;
+        --bord: hsl(var(--border));
+        border: 1px solid var(--bord);
+        color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        font-size: 150%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-betwee;
+        height: max-content;
+      }
+      blockquote {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2em;
+      }
+
+      .item-0 {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      @media (min-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 16px;
+          height: 100%;
+        }
+        .mobile-only {
+          display: none;
+        }
+        .desktop-only {
+          display: block;
+        }
+        .item {
+          height: 100%;
+        }
+        .item-0 {
+          grid-column: 1 / span 2;
+          grid-row: 1 / span 2;
+        }
+
+        .item-1 {
+          grid-column: 3 / span 2;
+          grid-row: 1;
+        }
+
+        .item-2 {
+          grid-column: 3;
+          grid-row: 2;
+        }
+
+        .item-3 {
+          grid-column: 4;
+          grid-row: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML CODE -->
+
+    <div class="grid_container">
+      <div class="grid">
+        <div class="item item-0">
+          <p>34</p>
+          <blockquote>
+            <p>
+              Tailus has transformed the way I develop web applications. Their
+              extensive collection of UI components, blocks, and templates has
+              significantly accelerated my workflow. The flexibility to
+              customize every aspect allows me to create unique user
+              experiences. Tailus is a game-changer for modern web development
+            </p>
+            12
+          </blockquote>
+        </div>
+        <div class="item item-1 desktop-only">
+          <blockquote>
+            <p>
+              Tailus is really extraordinary and very practical, no need to
+              break your head. A real gold mine.
+            </p>
+          </blockquote>
+        </div>
+        <div class="item item-2 desktop-only">
+          2
+          <blockquote>
+            <p>
+              Tailus is really extraordinary and very practical, no need to
+              break your head. A real gold mine.
+            </p>
+          </blockquote>
+        </div>
+        <div class="item item-3 desktop-only">
+          <blockquote>
+            <p>
+              Great work on tailfolio template. This is one of the best personal
+              website that I have seen so far!
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <!-- Icon Button -->
+    <button
+      aria-label="genertae"
+      class="size-10 rounded-full border text-white flex bg-indigo-600 border-white/10 hover:bg-indigo-700"
+    >
+      <svg
+        class="size-5 m-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </button>
+    <!-- GRID CSS CODE -->
+    <section className="bg-background py-16">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="text-center text-lg font-medium">
+          Your favorite companies are our partners.
+        </h2>
+        <div
+          className="mx-auto mt-20 flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 sm:gap-y-12"
+        >
+          <img
+            className="h-5 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/nvidia.svg"
+            alt="Nvidia Logo"
+            height="20"
+            width="auto"
+          />
+          <img
+            className="h-4 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/column.svg"
+            alt="Column Logo"
+            height="16"
+            width="auto"
+          />
+          <img
+            className="h-4 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/github.svg"
+            alt="GitHub Logo"
+            height="16"
+            width="auto"
+          />
+          <img
+            className="h-5 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/nike.svg"
+            alt="Nike Logo"
+            height="20"
+            width="auto"
+          />
+          <img
+            className="h-4 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/laravel.svg"
+            alt="Laravel Logo"
+            height="16"
+            width="auto"
+          />
+          <img
+            className="h-7 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/lilly.svg"
+            alt="Lilly Logo"
+            height="28"
+            width="auto"
+          />
+          <img
+            className="h-5 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
+            alt="Lemon Squeezy Logo"
+            height="20"
+            width="auto"
+          />
+          <img
+            className="h-6 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/openai.svg"
+            alt="OpenAI Logo"
+            height="24"
+            width="auto"
+          />
+          <img
+            className="h-4 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/tailwindcss.svg"
+            alt="Tailwind CSS Logo"
+            height="16"
+            width="auto"
+          />
+          <img
+            className="h-5 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/vercel.svg"
+            alt="Vercel Logo"
+            height="20"
+            width="auto"
+          />
+          <img
+            className="h-5 w-fit dark:invert"
+            src="https://html.tailus.io/blocks/customers/zapier.svg"
+            alt="Zapier Logo"
+            height="20"
+            width="auto"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

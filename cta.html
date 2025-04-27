@@ -1,0 +1,111 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call to Action</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #000;
+        color: #fff;
+      }
+      .cta-section {
+        padding: 4rem 0; /* équivalent à py-16 */
+      }
+
+      .cta-container {
+        max-width: 64rem; /* équivalent à max-w-5xl */
+        margin: 0 auto;
+        padding: 3rem 1.5rem; /* px-6 py-12 */
+        border: 1px solid var(--border-gray);
+        border-radius: 1.5rem; /* rounded-3xl */
+      }
+
+      @media (min-width: 768px) {
+        .cta-container {
+          padding: 5rem 1.5rem; /* md:py-20 */
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .cta-container {
+          padding: 8rem 1.5rem; /* lg:py-32 */
+        }
+      }
+
+      .cta-content {
+        text-align: center;
+      }
+
+      .cta-content h2 {
+        font-size: 2.25rem; /* text-4xl */
+        font-weight: 600; /* font-semibold */
+      }
+
+      @media (min-width: 1024px) {
+        .cta-content h2 {
+          font-size: 3rem; /* lg:text-5xl */
+        }
+      }
+
+      /* .cta-content p {
+        margin-top: 1rem; 
+      } */
+
+      .cta-buttons {
+        margin-top: 3rem; /* mt-12 */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem; /* gap-4 */
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem; /* size="lg" */
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 9999px; /* pill */
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .btn-primary {
+        background: var(--blue);
+        color: #fff;
+        border: 2px solid var(--blue);
+      }
+      .btn-primary:hover {
+        background: #1e40af;
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--blue);
+        border: 2px solid var(--blue);
+      }
+      .btn-outline:hover {
+        background: var(--blue);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cta-section">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2>Start Building</h2>
+          <p>Libero sapiente aliquam quibusdam aspernatur.</p>
+          <div class="cta-buttons">
+            <a href="/" class="btn btn-primary">Get Started</a>
+            <a href="/" class="btn btn-outline">Book Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

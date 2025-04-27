@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* styles.css */
+      /* Basic resets */
+
+      body {
+        font-family: sans-serif;
+        background-color: #000;
+        color: #e0e0e0;
+      }
+      .dark body {
+        background: transparent;
+      }
+      .team_container {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .intro-desc p {
+        line-height: 1.5;
+      }
+      .members-grid {
+        display: grid;
+        gap: 1.5rem 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        margin-top: 3rem;
+      }
+      .member-card {
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+      .member-card img {
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+        object-position: top;
+        filter: grayscale(100%);
+        border-radius: 0.375rem;
+        transition: all 0.5s ease;
+      }
+      .member-card:hover img {
+        filter: none;
+        height: 22.5rem;
+        border-radius: 0.75rem;
+      }
+      .member-info {
+        padding: 0.5rem 0.5rem 1rem;
+      }
+      .member-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .member-header h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        transition: letter-spacing 0.5s ease;
+      }
+      .member-card:hover .member-header h3 {
+        letter-spacing: 0.05em;
+      }
+      .member-header .index {
+        font-size: 0.75rem;
+      }
+      .member-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.25rem;
+      }
+      .member-role {
+        font-size: 0.875rem;
+        color: #6b7280;
+        transform: translateY(1.5rem);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .member-card:hover .member-role {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .member-link {
+        font-size: 0.875rem;
+        text-decoration: none;
+        transform: translateY(2rem);
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+      .member-card:hover .member-link {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .member-link:hover {
+        text-decoration: underline;
+      }
+      .member-card:hover .member-link {
+        color: #60a5fa;
+      }
+      .member-card:hover .member-link {
+        color: #60a5fa;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="team-section">
+      <div class="container">
+        <h2 class="s_about_header">Carriere</h2>
+        <div id="team-members" class="members-grid"></div>
+      </div>
+    </section>
+    <script>
+      // script.js
+      const members = [
+        {
+          name: "Ziyad Zaitouni",
+          role: "Fondateur et Dirigeant de Zed Conseil Consultant Technico-Fonctionnel IFS (ERP)",
+          avatar: "./assets/images/team/1.avif",
+          link: "#",
+        },
+        {
+          name: "Léa Dourneau",
+          role: "Business Developer",
+          avatar: "./assets/images/team/2.avif",
+          link: "#",
+        },
+      ];
+      const grid = document.getElementById("team-members");
+      members.forEach((member, i) => {
+        const card = document.createElement("div");
+        card.className = "member-card";
+        card.innerHTML = `
+        <img src="${member.avatar}" alt="${member.name}" />
+        <div class="member-info">
+        <div class="member-header">
+            <h3>${member.name}</h3><span class="index">_0${i + 1}</span>
+        </div>
+        <div class="member-details">
+            <span class="member-role">${member.role}</span>
+            <a href="${member.link}" class="member-link">Linktree</a>
+        </div>
+        </div>
+  `;
+        grid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrations Section</title>
+    <style>
+      :root {
+        --background: #fff;
+        --muted: #f5f5f5;
+        --foreground: #000;
+        --dots-color: black;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #09090b;
+          --muted: #18181b;
+          --foreground: #fff;
+          --dots-color: white;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .integrations-section {
+        padding: 6rem 1.5rem;
+      }
+
+      .bg-muted {
+        background-color: var(--muted);
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .integrations-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 384px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .cards-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .integration-card {
+        background-color: var(--background);
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 0.75rem;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        position: relative;
+      }
+
+      .integration-card.center {
+        width: 64px;
+        height: 64px;
+        border-radius: 1rem;
+        box-shadow: 0 20px 25px -5px rgba(1, 1, 1, 0.1);
+      }
+
+      .card-content {
+        margin: auto;
+        width: 24px;
+        height: 24px;
+      }
+
+      .center-logo {
+        position: relative;
+        z-index: 20;
+        background-color: var(--muted);
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        padding: 0.25rem;
+        margin: 0 2rem;
+      }
+
+      .radial-gradient {
+        position: absolute;
+        inset: 33%;
+        background-image: radial-gradient(
+          var(--dots-color) 1px,
+          transparent 1px
+        );
+        background-size: 16px 16px;
+        opacity: 0.5;
+        mask-image: radial-gradient(
+          ellipse 50% 50% at 50% 50%,
+          #000 70%,
+          transparent 100%
+        );
+      }
+
+      .connector-line {
+        position: absolute;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent);
+        height: 1px;
+      }
+
+      .left-top .connector-line {
+        width: 130px;
+        left: 100%;
+        top: 50%;
+        transform: rotate(25deg);
+        transform-origin: left;
+      }
+
+      .left-middle .connector-line {
+        width: 120px;
+        left: 100%;
+        top: 50%;
+        transform-origin: left;
+      }
+
+      .left-bottom .connector-line {
+        width: 130px;
+        left: 100%;
+        top: 50%;
+        transform: rotate(-25deg);
+        transform-origin: left;
+      }
+
+      .right-top .connector-line {
+        width: 130px;
+        right: 100%;
+        top: 50%;
+        transform: rotate(-25deg);
+        transform-origin: right;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+      }
+
+      .right-middle .connector-line {
+        width: 120px;
+        right: 100%;
+        top: 50%;
+        transform-origin: right;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+      }
+
+      .right-bottom .connector-line {
+        width: 130px;
+        right: 100%;
+        top: 50%;
+        transform: rotate(25deg);
+        transform-origin: right;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+      }
+
+      .text-section {
+        max-width: 576px;
+        margin: 3rem auto 0;
+        text-align: center;
+      }
+
+      .button {
+        display: inline-flex;
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 0.375rem;
+        text-decoration: none;
+        color: var(--foreground);
+        background-color: transparent;
+        transition: all 0.2s;
+      }
+
+      .button:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="integrations-section bg-muted">
+      <div class="container">
+        <div class="integrations-grid">
+          <div class="cards-column">
+            <div class="integration-card left-top">
+              <div class="connector-line"></div>
+              <div class="card-content"></div>
+            </div>
+            <div class="integration-card left-middle">
+              <div class="connector-line"></div>
+              <div class="card-content"></div>
+            </div>
+            <div class="integration-card left-bottom">
+              <div class="connector-line"></div>
+              <div class="card-content"></div>
+            </div>
+          </div>
+
+          <div class="center-logo">
+            <div class="integration-card center">
+              <div class="card-content"></div>
+            </div>
+          </div>
+
+          <div class="radial-gradient"></div>
+
+          <div class="cards-column">
+            <div class="integration-card right-top">
+              <div class="connector-line"></div>
+              <div class="card-content"></div>
+            </div>
+            <div class="integration-card right-middle">
+              <div class="connector-line"></div>
+              <div class="card-content"></div>
+            </div>
+            <div class="integration-card right-bottom">
+              <div class="connector-line"></div>
+              <div class="card-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-section">
+          <h2>Integrate with your favorite tools</h2>
+          <p>
+            Connect seamlessly with popular platforms and services to enhance
+            your workflow.
+          </p>
+          <a href="#" class="button">Get Started</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

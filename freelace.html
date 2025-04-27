@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Section</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      /* Conteneur principal avec marges haut/bas */
+      .community_section {
+        padding: 4rem 0;
+      }
+
+      /* Centrer le contenu et limiter la largeur */
+      .community_container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Centre le texte du titre et du paragraphe */
+      .community .text-center {
+        text-align: center;
+      }
+
+      .community .text-center h2 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      .community .text-center p {
+        margin-top: 1.5rem;
+        color: #555;
+      }
+
+      /* Grille fluide d’avatars */
+      .community_section .avatar-grid {
+        display: flex; /* Flexbox pour le layout en ligne et en grille */
+        flex-wrap: wrap; /* Permet le retour à la ligne */
+        justify-content: center; /* Centre horizontalement */
+        gap: 0.75rem; /* Espacement entre les items */
+        margin-top: 3rem;
+      }
+
+      /* Style des liens autour des images */
+      .community_section .avatar-grid a {
+        display: block;
+        width: 7.5rem;
+        height: 7.5rem;
+        border: 2px solid #ddd; /* Bordure grise claire */
+        border-radius: 50%; /* Cercle parfait */
+        overflow: hidden;
+      }
+
+      /* Image responsive en mode « cover » */
+      .community_section .avatar-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Remplit le conteneur sans déformation */
+      }
+    </style>
+  </head>
+  <body>
+    <section class="community-section">
+      <div class="container">
+        <div class="text-center">
+          <h2>
+            Joint the Community <br />
+            if your are freelance
+          </h2>
+          <p>Harum quae dolore orrupti aut temporibus ariatur.</p>
+        </div>
+        <div id="avatars" class="avatar-grid"></div>
+      </div>
+
+      <script>
+        // Liste des contributeurs
+        const contributors = [
+          {
+            name: "John Doe",
+            url: "https://github.com/johndoe",
+            img: "https://randomuser.me/api/portraits/men/1.jpg",
+          },
+          {
+            name: "Jane Smith",
+            url: "https://github.com/janesmith",
+            img: "https://randomuser.me/api/portraits/women/2.jpg",
+          },
+          {
+            name: "Alice Dupont",
+            url: "https://github.com/alicedupont",
+            img: "https://randomuser.me/api/portraits/women/3.jpg",
+          },
+          {
+            name: "Bob Martin",
+            url: "https://github.com/bobmartin",
+            img: "https://randomuser.me/api/portraits/men/4.jpg",
+          },
+          {
+            name: "Méschac Irung",
+            url: "https://github.com/meschacirung",
+            img: "https://randomuser.me/api/portraits/men/5.jpg",
+          },
+          // Ajoutez ou modifiez autant de contributeurs que nécessaire
+        ];
+
+        // Génère et insère dynamiquement les avatars après le chargement du DOM
+        document.addEventListener("DOMContentLoaded", () => {
+          const container = document.getElementById("avatars");
+          contributors.forEach(({ name, url, img }) => {
+            const link = document.createElement("a");
+            link.href = url;
+            link.target = "_blank";
+            link.title = name;
+
+            const image = document.createElement("img");
+            image.src = img;
+            image.alt = name;
+            image.loading = "lazy"; // Chargement paresseux pour optimiser la performance
+
+            link.appendChild(image);
+            container.appendChild(link);
+          });
+        });
+      </script>
+    </section>
+  </body>
+</html>

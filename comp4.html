@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrations Section</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+      /* Reset & base */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background-color: #f9fafb;
+        color: #111827;
+      }
+
+      /* Section wrapper */
+      .integrations-section {
+        padding: 3rem 0;
+        background-color: #e5e7eb;
+      }
+
+      /* Background & container */
+      .integrations-bg {
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Radial overlay */
+      .radial-wrapper {
+        position: relative;
+        background: radial-gradient(
+          farthest-corner at center,
+          transparent 0%,
+          #e5e7eb 75%
+        );
+        padding: 2rem 0;
+        border-radius: 1rem;
+      }
+
+      /* Rows of cards */
+      .integration-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0.5rem 0;
+      }
+
+      /* Individual card */
+      .integration-card {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .integration-card img {
+        max-width: 2rem;
+        max-height: 2rem;
+      }
+
+      /* Highlighted middle card */
+      .integration-card.highlighted {
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Text area */
+      .text-center {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      .text-center h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+      .text-center p {
+        color: #6b7280;
+        margin-bottom: 1rem;
+      }
+
+      /* Button */
+      .btn-outline-sm {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        border: 1px solid #111827;
+        background: transparent;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-outline-sm:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="integrations-section">
+      <div class="integrations-bg">
+        <div class="container">
+          <div class="radial-wrapper">
+            <div class="integration-row">
+              <div class="integration-card">
+                <img src="logos/gemini.svg" alt="Gemini Logo" />
+              </div>
+              <div class="integration-card">
+                <img src="logos/replit.svg" alt="Replit Logo" />
+              </div>
+            </div>
+            <div class="integration-row">
+              <div class="integration-card">
+                <img src="logos/magicui.svg" alt="MagicUI Logo" />
+              </div>
+              <div class="integration-card highlighted">
+                <img src="logos/logo-icon.svg" alt="Main Logo" />
+              </div>
+              <div class="integration-card">
+                <img src="logos/vscodium.svg" alt="VSCodium Logo" />
+              </div>
+            </div>
+            <div class="integration-row">
+              <div class="integration-card">
+                <img src="logos/mediawiki.svg" alt="MediaWiki Logo" />
+              </div>
+              <div class="integration-card">
+                <img src="logos/googlepalm.svg" alt="Google PaLM Logo" />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <h2>Integrate with your favorite tools</h2>
+            <p>
+              Connect seamlessly with popular platforms and services to enhance
+              your workflow.
+            </p>
+            <button id="get-started-btn" class="btn-outline-sm">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document
+        .getElementById("get-started-btn")
+        .addEventListener("click", () => {
+          // Replace with your actual “Get Started” logic or navigation
+          window.location.href = "/#get-started";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/icons/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/lnu1fpi.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.275.0/dist/umd/lucide.min.js"></script>
+  </head>
+  <body>
+    <nav-bar base-path="../"></nav-bar>
+    <main class="app">
+      <section class="section_about_hero">
+        <div class="about_dodo"></div>
+        <div class="spacer_xhuge"></div>
+        <div class="spacer_xhuge"></div>
+        <div
+          class="section_about_container max_container padding_section_large"
+        >
+          <div class="section_about_wrapper">
+            <div class="section_about_titles">
+              <div class="section_about_desc">
+                <h1 class="section_mission_title">Rejoignez Zed Conseil</h1>
+                <p>Postes disponibles / Available positions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="carriers-section">
+        <div class="carriers-container">
+          <div class="carriers-accordion">
+            <div class="carriers-accordion-item">
+              <button class="carriers-accordion-trigger" aria-expanded="false">
+                <h3 class="question">Stage - Community Manager (H/F)</h3>
+                <span class="question"
+                  >100% Télétravail • 2 mois • Non rémunéré</span
+                >
+              </button>
+              <div class="carriers-accordion-content">
+                <p></p>
+              </div>
+            </div>
+            <div class="carriers-accordion-item">
+              <button class="carriers-accordion-trigger" aria-expanded="false">
+                <h3 class="question">Stage - Chargé⋅e de Sourcing IT (H/F)</h3>
+                <span class="question"
+                  >100% Télétravail • 2 mois • Non rémunéré</span
+                >
+              </button>
+              <div
+                class="carriers-accordion-content carriers-accordion-content-2"
+              >
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="spacer_xhuge"></div>
+      <div class="line"></div>
+    </main>
+    <footer-bar base-path="../"></footer-bar>
+    <script>
+      // script.js
+      document.addEventListener("DOMContentLoaded", () => {
+        const triggers = document.querySelectorAll(
+          ".carriers-accordion-trigger"
+        );
+
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const expanded = btn.getAttribute("aria-expanded") === "true";
+            // Fermer tous les items
+            triggers.forEach((t) => {
+              t.setAttribute("aria-expanded", "false");
+              t.nextElementSibling.style.maxHeight = null;
+            });
+            // Ouvrir l'item courant
+            if (!expanded) {
+              btn.setAttribute("aria-expanded", "true");
+              const content = btn.nextElementSibling;
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        });
+      });
+      const offreStage = `
+  <p>Dans le cadre de notre développement, nous recherchons un·e stagiaire Community Manager pour renforcer notre présence sur LinkedIn et participer activement à nos initiatives marketing et communication.</p>
+  <p><strong>Vos missions :</strong></p>
+  <ul>
+    <li>Création et publication de contenus sur LinkedIn</li>
+    <li>Élaboration du calendrier éditorial et des stratégies de contenu</li>
+    <li>Mise en place et suivi des campagnes publicitaires</li>
+    <li>Veille concurrentielle et analyse des tendances du marché</li>
+  </ul>
+  <p><strong>Profil recherché :</strong></p>
+  <ul>
+    <li>Formation : Bac+3 à Bac+5 en marketing digital ou domaine similaire</li>
+    <li>Excellentes capacités rédactionnelles et maîtrise de l’orthographe et de la syntaxe</li>
+    <li>Créativité, autonomie et esprit d’initiative</li>
+    <li>Bonne maîtrise du pack Office et des réseaux sociaux</li>
+    <li>Compétences en communication et sens de l’engagement</li>
+  </ul>
+  <ul>
+    <li>Durée : Stage de 2 mois, débutant dès que possible</li>
+    <li>Télétravail : 100%</li>
+    <li>Rémunération : Non rémunéré</li>
+  </ul>
+`;
+
+      // Pour l'afficher dynamiquement dans un .carriers-accordion-content :
+      document.querySelector(".carriers-accordion-content p").innerHTML =
+        offreStage;
+
+      const offreSourcing = `
+  <p>Dans le cadre de notre croissance, nous recherchons un·e stagiaire Chargé·e de Sourcing IT pour nous accompagner dans le recrutement de talents pour renforcer notre vivier de profils IT.</p>
+  <p><strong>Vos missions :</strong></p>
+  <ul>
+    <li>Identifier et rechercher des profils IT qualifiés sur les job boards, réseaux sociaux et autres plateformes professionnelles.</li>
+    <li>Élaborer et maintenir des listes de candidats correspondant aux besoins spécifiques de l’entreprise.</li>
+    <li>Réaliser une veille active sur le marché IT et les compétences recherchées.</li>
+    <li>Préqualifier les candidats via des entretiens en visioconférence.</li>
+    <li>Mettre à jour et suivre les bases de données des candidats.</li>
+  </ul>
+  <p><strong>Profil recherché :</strong></p>
+  <ul>
+    <li>Formation : Bac+3 à Bac+5 en ressources humaines, informatique, gestion ou domaine similaire.</li>
+    <li>Connaissance du marché du recrutement IT et des profils recherchés.</li>
+    <li>Bonnes compétences en communication orale et écrite.</li>
+    <li>Organisé·e, autonome, avec une approche orientée résultats.</li>
+    <li>Bonne maîtrise des outils bureautiques (Pack Office) et des réseaux sociaux professionnels (LinkedIn).</li>
+    <li>Intérêt pour le recrutement et le secteur de l'IT.</li>
+  </ul>
+  <ul>
+    <li>Durée : Stage de 2 mois, débutant dès que possible</li>
+    <li>Télétravail : 100%</li>
+    <li>Rémunération : Non rémunéré</li>
+  </ul>
+  <p>Si vous êtes passionné·e par l’IT et souhaitez développer vos compétences dans le domaine du recrutement, rejoignez-nous !</p>
+`;
+
+      // Pour l'afficher dans .carriers-accordion-content :
+      document.querySelector(".carriers-accordion-content-2").innerHTML =
+        offreSourcing;
+    </script>
+    <script src="../assets/js/comp.js" defer="defer" type="module"></script>
+  </body>
+</html>

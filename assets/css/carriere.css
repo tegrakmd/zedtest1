@@ -1,0 +1,81 @@
+h3 {
+  font-family: Mona sans;
+  font-weight: 400;
+}
+li {
+  list-style: none;
+}
+.carriers-section {
+  padding: 4rem 1rem;
+  font-family: sans-serif;
+  color: #2d3748;
+}
+
+.carriers-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carriers-support-link {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+.carriers-support-link:hover {
+  text-decoration: underline;
+}
+
+.carriers-accordion-item {
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.carriers-accordion-trigger {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.carriers-accordion-trigger .icon {
+  font-size: 1.25rem;
+  width: max-content;
+}
+
+.carriers-accordion-trigger[aria-expanded="true"] {
+  background-color: #111;
+}
+
+.carriers-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem;
+}
+
+.carriers-accordion-content p {
+  margin: 1rem 0;
+  color: #fff;
+}
+.carriers-accordion-content li {
+  padding: 0 1rem;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .carriers-accordion-trigger {
+    flex-direction: column;
+    align-items: start;
+  }
+  .carriers-accordion-content {
+    height: 300px;
+    overflow-y: auto;
+  }
+}

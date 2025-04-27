@@ -1,0 +1,10 @@
+@import url(./styles.css);
+@import url(./nav.css);
+@import url(./about.css);
+@import url(./comp/contact.css);
+@import url(./carriere.css);
+@import url(./comp/testimonial.css);
+@import url(./comp/cta.css);
+@import url(./mission.css);
+@import url(./comp/footer.css);
+@import url(./mediaquery.css);

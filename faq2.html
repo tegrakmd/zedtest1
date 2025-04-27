@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* styles.css */
+      .carriers-section {
+        background-color: #f7fafc;
+        padding: 4rem 1rem;
+        font-family: sans-serif;
+        color: #2d3748;
+      }
+
+      .carriers-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .carriers-intro h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .carriers-intro p {
+        color: #4a5568;
+      }
+
+      .carriers-support-link {
+        color: #3182ce;
+        text-decoration: none;
+      }
+
+      .carriers-support-link:hover {
+        text-decoration: underline;
+      }
+
+      .carriers-accordion-item {
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .carriers-accordion-trigger {
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .carriers-accordion-trigger .icon {
+        font-size: 1.25rem;
+      }
+
+      .carriers-accordion-trigger[aria-expanded="true"] {
+        background-color: #edf2f7;
+      }
+
+      .carriers-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 1rem;
+      }
+
+      .carriers-accordion-content p {
+        margin: 1rem 0;
+        color: #4a5568;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- index.html -->
+    <section class="carriers-section">
+      <div class="carriers-container">
+        <div class="carriers-intro">
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            Vous ne trouvez pas ce que vous cherchez ? Contactez notre
+            <a href="#" class="carriers-support-link">équipe support client</a>.
+          </p>
+        </div>
+        <div class="carriers-accordion">
+          <div class="carriers-accordion-item">
+            <button class="carriers-accordion-trigger" aria-expanded="false">
+              <span class="icon">🕒</span>
+              <span class="question"
+                >Quels sont vos horaires d'ouverture ?</span
+              >
+            </button>
+            <div class="carriers-accordion-content">
+              <p>
+                Notre service client est disponible du lundi au vendredi de 9h00
+                à 20h00 (EST), et le week-end de 10h00 à 18h00 (EST). Pendant
+                les jours fériés, les horaires peuvent varier et seront affichés
+                sur notre site.
+              </p>
+            </div>
+          </div>
+          <div class="carriers-accordion-item">
+            <button class="carriers-accordion-trigger" aria-expanded="false">
+              <span class="icon">💳</span>
+              <span class="question"
+                >Comment fonctionnent les paiements d'abonnement ?</span
+              >
+            </button>
+            <div class="carriers-accordion-content">
+              <p>
+                Les paiements d'abonnement sont automatiquement débités de votre
+                méthode de paiement par défaut à la même date chaque mois ou
+                année, selon votre cycle de facturation. Vous pouvez mettre à
+                jour vos informations de paiement et consulter l'historique de
+                facturation dans votre tableau de bord.
+              </p>
+            </div>
+          </div>
+          <div class="carriers-accordion-item">
+            <button class="carriers-accordion-trigger" aria-expanded="false">
+              <span class="icon">🚚</span>
+              <span class="question"
+                >Puis-je accélérer la livraison de ma commande ?</span
+              >
+            </button>
+            <div class="carriers-accordion-content">
+              <p>
+                Oui, nous proposons plusieurs options de livraison express lors
+                du paiement. La livraison le lendemain et en 2 jours est
+                disponible pour la plupart des adresses aux États-Unis si la
+                commande est passée avant 14h00 (EST). Les options de livraison
+                express à l'international varient selon la destination.
+              </p>
+            </div>
+          </div>
+          <div class="carriers-accordion-item">
+            <button class="carriers-accordion-trigger" aria-expanded="false">
+              <span class="icon">🌐</span>
+              <span class="question">Proposez-vous un support localisé ?</span>
+            </button>
+            <div class="carriers-accordion-content">
+              <p>
+                Nous proposons un support multilingue en anglais, espagnol,
+                français, allemand et japonais. Notre équipe support peut
+                assister les clients dans ces langues par e-mail, chat et
+                téléphone pendant les horaires d'ouverture standards de chaque
+                région.
+              </p>
+            </div>
+          </div>
+          <div class="carriers-accordion-item">
+            <button class="carriers-accordion-trigger" aria-expanded="false">
+              <span class="icon">📦</span>
+              <span class="question">Comment suivre ma commande ?</span>
+            </button>
+            <div class="carriers-accordion-content">
+              <p>
+                Une fois votre commande expédiée, vous recevrez un e-mail de
+                confirmation avec un numéro de suivi. Vous pouvez utiliser ce
+                numéro sur notre site ou sur celui du transporteur pour suivre
+                votre colis. Vous pouvez également consulter le statut de la
+                commande dans votre tableau de bord.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // script.js
+      document.addEventListener("DOMContentLoaded", () => {
+        const triggers = document.querySelectorAll(
+          ".carriers-accordion-trigger"
+        );
+
+        triggers.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const expanded = btn.getAttribute("aria-expanded") === "true";
+            // Fermer tous les items
+            triggers.forEach((t) => {
+              t.setAttribute("aria-expanded", "false");
+              t.nextElementSibling.style.maxHeight = null;
+            });
+            // Ouvrir l'item courant
+            if (!expanded) {
+              btn.setAttribute("aria-expanded", "true");
+              const content = btn.nextElementSibling;
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

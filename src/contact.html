@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/icons/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/lnu1fpi.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.275.0/dist/umd/lucide.min.js"></script>
+  </head>
+  <body>
+    <nav-bar base-path="../"></nav-bar>
+    <main class="app">
+      <section class="contact_section padding-global">
+        <div class="spacer_xhuge"></div>
+        <div class="spacer_xhuge"></div>
+
+        <div class="contact_container max_container padding_section_large">
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h2 class="contact-title">Collaborate</h2>
+              <a href="mailto:hello@tailus.io" class="contact-link">Email</a>
+              <p class="text-sm">gestion@zedconseil.com</p>
+            </div>
+            <div class="contact-card">
+              <h2 class="contact-title">Pour ne rien manquer!</h2>
+              <a href="mailto:press@tailus.io" class="contact-link">Adresse</a>
+              <p class="text-sm">12 rue de la Part-Dieu, 69003 LYON</p>
+            </div>
+          </div>
+
+          <div class="decorative-line"></div>
+
+          <form class="form_contact-section">
+            <div class="form_contact-card">
+              <h3 class="contact-title"></h3>
+
+              <div class="form_contact-group">
+                <label for="name">Full name</label>
+                <input type="text" id="name" required />
+              </div>
+
+              <div class="form_contact-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+              </div>
+
+              <div class="form_contact-group">
+                <div class="label">
+                  <label for="option">Option</label>
+                </div>
+                <div id="choix">
+                  <select id="">
+                    <option value="">Choisissez une option</option>
+                    <option value="1">Demande de devis</option>
+                    <option value="2">Demande de rendez-vous</option>
+                    <option value="3">Autre</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form_contact-group">
+                <label for="msg">Message</label>
+                <textarea id="msg" rows="3"></textarea>
+              </div>
+
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="spacer_xhuge"></div>
+      <div class="line"></div>
+      <!-- footer -->
+    </main>
+    <footer-bar base-path="../"></footer-bar>
+    <script>
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        // Ajoutez ici votre logique de soumission de formulaire
+        alert("Form submitted successfully!");
+      });
+    </script>
+    <script src="../assets/js/comp.js" defer="defer" type="module"></script>
+  </body>
+</html>

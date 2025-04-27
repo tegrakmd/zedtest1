@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logo Cloud Infini</title>
+    <style>
+      /* Reset minimal */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: #fafafa;
+        color: #333;
+      }
+
+      /* Section globale */
+      .logo-cloud {
+        background: #fff;
+        padding: 4rem 0;
+        overflow: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      /* Label à gauche */
+      .label {
+        flex-shrink: 0;
+        border-right: 1px solid #ddd;
+        padding-right: 1rem;
+      }
+      .label p {
+        font-size: 0.875rem;
+        text-align: right;
+      }
+
+      /* Wrapper du slider */
+      .slider-wrapper {
+        position: relative;
+        overflow: hidden;
+        flex-grow: 1;
+        height: 3rem; /* ajuster selon la taille des logos */
+      }
+
+      /* Piste (track) */
+      .slider-track {
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      /* Chaque slide */
+      .slide img {
+        height: 1.5rem;
+        width: auto;
+        display: block;
+      }
+
+      /* Cacher la scrollbar */
+      .slider-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Masques flous (progressive blur imitation) */
+      .mask {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4rem;
+        pointer-events: none;
+        background: linear-gradient(to right, white 0%, transparent 100%);
+        /* pour fond clair ; si fond sombre, inverser */
+      }
+      .mask-left {
+        left: 0;
+      }
+      .mask-right {
+        right: 0;
+        background: linear-gradient(to left, white 0%, transparent 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="logo-cloud">
+      <div class="container">
+        <div class="label">
+          <p>Powering the best teams</p>
+        </div>
+        <div class="slider-wrapper" id="slider">
+          <div class="slider-track" id="track">
+            <!-- Une seule série d'images, qui sera clonée par le script -->
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/nvidia.svg"
+                alt="Nvidia Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/column.svg"
+                alt="Column Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/github.svg"
+                alt="GitHub Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/nike.svg"
+                alt="Nike Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
+                alt="Lemon Squeezy Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/laravel.svg"
+                alt="Laravel Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/lilly.svg"
+                alt="Lilly Logo" />
+            </div>
+            <div class="slide">
+              <img
+                src="https://html.tailus.io/blocks/customers/openai.svg"
+                alt="OpenAI Logo" />
+            </div>
+          </div>
+          <!-- Fondus de masque -->
+          <div class="mask mask-left"></div>
+          <div class="mask mask-right"></div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const wrapper = document.getElementById("slider");
+        const track = document.getElementById("track");
+
+        // Paramètres : pixels par seconde
+        const SPEED_DEFAULT = 40; // speed
+        const SPEED_HOVER = 20; // speedOnHover
+        let speed = SPEED_DEFAULT;
+
+        // Duplique le contenu pour la boucle infinie
+        track.innerHTML += track.innerHTML;
+
+        let lastTimestamp = null;
+
+        function step(timestamp) {
+          if (lastTimestamp !== null) {
+            const delta = (timestamp - lastTimestamp) / 1000; // en secondes
+            wrapper.scrollLeft += speed * delta;
+            // Si scroll dépasse la moitié, revient au début
+            if (wrapper.scrollLeft >= track.scrollWidth / 2) {
+              wrapper.scrollLeft -= track.scrollWidth / 2;
+            }
+          }
+          lastTimestamp = timestamp;
+          window.requestAnimationFrame(step);
+        }
+
+        // Démarrage de l'animation
+        window.requestAnimationFrame(step);
+
+        // Ajuster la vitesse au survol
+        wrapper.addEventListener("mouseenter", () => {
+          speed = SPEED_HOVER;
+        });
+        wrapper.addEventListener("mouseleave", () => {
+          speed = SPEED_DEFAULT;
+        });
+      });
+    </script>
+  </body>
+</html>

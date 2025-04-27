@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Blur Reveal</title>
+
+    <!-- Splitting.js and GSAP -->
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #111;
+        color: white;
+        font-family: "Arial", sans-serif;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero_section {
+        text-align: center;
+      }
+
+      .hero_title {
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+
+      .hero_title .char {
+        display: inline-block;
+        filter: blur(12px);
+        opacity: 0;
+        transform: translateX(-40px) scale(0.95); /* Slide from left */
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero_section">
+      <h1 class="hero_title" data-splitting>Welcome to Our World</h1>
+    </section>
+
+    <script>
+      // Init Splitting
+      Splitting();
+
+      // Framer-style horizontal animation
+      gsap.to(".char", {
+        opacity: 1,
+        filter: "blur(0px)",
+        x: 0,
+        scale: 1,
+        ease: "elastic.out(1, 0.5)",
+        duration: 1.5,
+        stagger: {
+          each: 0.04,
+          from: "start",
+        },
+        delay: 0.2,
+      });
+    </script>
+  </body>
+</html>
+<!--  -->
+<style>
+  .grid {
+    display: grid;
+    flex: none;
+    gap: 32px;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, min-content);
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+  .grid_item {
+    align-content: center;
+    align-items: center;
+    align-self: start;
+    background-color: var(
+      --token-c4c4829c-74d7-4050-a1a6-95473b262a350,
+      #efefef
+    );
+    border-radius: 24px;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 32px;
+    /* grid-column: auto / span 2; */
+    height: 400px;
+    justify-content: center;
+    justify-self: start;
+    overflow: hidden;
+    padding: 40px;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    will-change: var(--framer-will-change-override, transform);
+  }
+  /* @768px */
+  .spano {
+    grid-column: auto / span 2;
+  }
+</style>
+<!--  -->

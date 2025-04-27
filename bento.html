@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials Section</title>
+    <link rel="stylesheet" href="./assets/css/comp/testimonial.css" />
+  </head>
+  <body>
+    <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="sun">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="moon">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button> -->
+    <section class="testimonial_section padding-global">
+      <div class="testimonial_container max_container padding_section_large">
+        <div class="testmonial_wrapper">
+          <div class="testmonial_header">
+            <h2 class="testmonial_heading">
+              Build by makers, loved by thousand developers
+            </h2>
+            <p class="testmonial_subtitle">
+              Gemini is evolving to be more than just the models. It supports an
+              entire to the APIs and platforms helping developers and businesses
+              innovate.
+            </p>
+          </div>
+          <div class="testimonial-grid">
+            <!-- Big Card -->
+            <div class="card card-big">
+              <header>
+                <img
+                  class="card-logo"
+                  src="https://html.tailus.io/blocks/customers/nike.svg"
+                  alt="Nike Logo"
+                />
+              </header>
+              <div class="content">
+                <blockquote class="blockquote">
+                  <p class="quote-text">
+                    Tailus has transformed the way I develop web applications.
+                    Their extensive collection of UI components, blocks, and
+                    templates has significantly accelerated my workflow.
+                  </p>
+
+                  <div class="citation">
+                    <div class="avatar">
+                      <img
+                        src="./assets/images/avatars/1.jpg"
+                        alt="Shekinah Tshiokufila"
+                      />
+                    </div>
+                    <div>
+                      <cite class="author-name">Shekinah Tshiokufila</cite>
+                      <span class="author-title">Software Engineer</span>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Medium Card -->
+            <div class="card card-medium">
+              <div class="content">
+                <blockquote class="blockquote">
+                  <p class="quote-text">
+                    Tailus is really extraordinary and very practical, no need
+                    to break your head. A real gold mine.
+                  </p>
+
+                  <div class="citation">
+                    <div class="avatar">
+                      <img
+                        src="./assets/images/avatars/2.jpg"
+                        alt="Jonathan Yombo"
+                      />
+                    </div>
+                    <div>
+                      <cite class="author-name">Jonathan Yombo</cite>
+                      <span class="author-title">Software Engineer</span>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Small Card 1 -->
+            <div class="card card-small1">
+              <div class="content">
+                <blockquote class="blockquote">
+                  <p class="quote-text-small">
+                    Great work on tailfolio template. This is one of the best
+                    personal website that I have seen so far!
+                  </p>
+
+                  <div class="citation">
+                    <div class="avatar">
+                      <img
+                        src="./assets/images/avatars/3.jpg"
+                        alt="Yucel Faruksahan"
+                      />
+                    </div>
+                    <div>
+                      <cite class="author-name">Yucel Faruksahan</cite>
+                      <span class="author-title">Creator, Tailkits</span>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Mixed Variant Card -->
+            <div class="card card-small2">
+              <div class="content">
+                <blockquote class="blockquote">
+                  <p class="quote-text-small">
+                    Great work on tailfolio template. This is one of the best
+                    personal website that I have seen so far!
+                  </p>
+
+                  <div class="citation">
+                    <div class="avatar">
+                      <img
+                        src="./assets/images/avatars/4.jpg"
+                        alt="Rodrigo Aguilar"
+                      />
+                    </div>
+                    <div>
+                      <cite class="author-name">Rodrigo Aguilar</cite>
+                      <span class="author-title">Creator, TailwindAwesome</span>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+
+      // Check for saved theme preference or use OS preference
+      const savedTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+
+      // Apply the saved theme on page load
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+
+      // Toggle theme on button click
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+    </script> -->
+  </body>
+</html>

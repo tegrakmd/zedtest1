@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: white;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      section {
+        padding: 4rem 1rem;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .description {
+        text-align: center;
+        margin-top: 1rem;
+        color: #6b7280;
+      }
+
+      .accordion {
+        margin-top: 3rem;
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .accordion-item {
+        border-bottom: 1px dashed #d1d5db;
+      }
+
+      .accordion-button {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        font-size: 1rem;
+        padding: 1rem 0;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .accordion-content {
+        display: none;
+        padding-bottom: 1rem;
+        color: #374151;
+      }
+
+      .accordion-item.active .accordion-content {
+        display: block;
+      }
+
+      .support-text {
+        margin-top: 2rem;
+        text-align: center;
+        color: #6b7280;
+      }
+
+      .support-text a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .support-text a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <p class="description">
+          Discover quick and comprehensive answers to common questions about our
+          platform, services, and features.
+        </p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-button">
+              How long does shipping take?
+            </button>
+            <div class="accordion-content">
+              Standard shipping takes 3-5 business days, depending on your
+              location. Express shipping options are available at checkout for
+              1-2 business day delivery.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-button">
+              What payment methods do you accept?
+            </button>
+            <div class="accordion-content">
+              We accept all major credit cards (Visa, Mastercard, American
+              Express), PayPal, Apple Pay, and Google Pay. For enterprise
+              customers, we also offer invoicing options.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-button">
+              Can I change or cancel my order?
+            </button>
+            <div class="accordion-content">
+              You can modify or cancel your order within 1 hour of placing it.
+              After this window, please contact our customer support team who
+              will assist you with any changes.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-button">
+              Do you ship internationally?
+            </button>
+            <div class="accordion-content">
+              Yes, we ship to over 50 countries worldwide. International
+              shipping typically takes 7-14 business days. Additional customs
+              fees may apply depending on your country's import regulations.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-button">
+              What is your return policy?
+            </button>
+            <div class="accordion-content">
+              We offer a 30-day return policy for most items. Products must be
+              in original condition with tags attached. Some specialty items may
+              have different return terms, which will be noted on the product
+              page.
+            </div>
+          </div>
+        </div>
+
+        <p class="support-text">
+          Can't find what you're looking for?
+          <a href="#">Contact our customer support team</a>
+        </p>
+      </div>
+    </section>
+
+    <script>
+      const buttons = document.querySelectorAll(".accordion-button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = button.parentElement;
+          const isActive = item.classList.contains("active");
+
+          document
+            .querySelectorAll(".accordion-item")
+            .forEach((i) => i.classList.remove("active"));
+
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
