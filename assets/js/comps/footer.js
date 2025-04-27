@@ -10,7 +10,7 @@ class FooterBar extends HTMLElement {
     this.innerHTML = `
       <footer class="footer">
         <div class="footer__container">
-          <a href="\${basePath}/index.html" class="footer__logo" aria-label="Retour à l'accueil">
+          <a href="${basePath}/index.html" class="footer__logo" aria-label="Retour à l'accueil">
              <img src="${basePath}/assets/images/icons/icon.png" alt="" />
           </a>
           <div class="footer__links">
