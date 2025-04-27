@@ -77,7 +77,8 @@
 .s_about_header {
   color: gray;
   font-weight: 400;
-  font-size: 3rem;
+
+  font-size: clamp(1.4rem, 4cqi, 4rem);
   text-align: center;
   line-height: 1;
 }
