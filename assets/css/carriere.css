@@ -14,8 +14,34 @@ li {
 .carriers-container {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+}
+/* ========================================== */
+.carriers-container .border-1b {
+  --tw-border-opacity: 1;
+  border-color: rgb(26 26 26 / var(--tw-border-opacity));
 }
 
+.to-transparent {
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+.from-site-background {
+  --tw-gradient-from: #000 var(--tw-gradient-from-position);
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  position: absolute;
+
+  inset: 0;
+  width: 100%;
+  height: 2rem;
+}
+/* ========================================= */
+.carriers-container .border-b {
+  border-bottom-width: 1px;
+}
 .carriers-support-link {
   color: #3182ce;
   text-decoration: none;
@@ -45,15 +71,16 @@ li {
   cursor: pointer;
 }
 
-.carriers-accordion-trigger .icon {
-  font-size: 1.25rem;
-  width: max-content;
+.carriers-accordion-trigger span.question {
+  color: gray;
 }
-
 .carriers-accordion-trigger[aria-expanded="true"] {
   background-color: #111;
 }
-
+p strong {
+  font-weight: 400;
+  font-size: clamp();
+}
 .carriers-accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -66,8 +93,13 @@ li {
   color: #fff;
 }
 .carriers-accordion-content li {
-  padding: 0 1rem;
+  padding: 0.78rem;
   color: #fff;
+  display: flex;
+  gap: 0.65em;
+}
+.carriers-accordion-content li svg {
+  width: 30px;
 }
 @media (max-width: 768px) {
   .carriers-accordion-trigger {
