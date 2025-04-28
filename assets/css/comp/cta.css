@@ -24,7 +24,8 @@
 }
 .cta_first_container .text-center h2,
 .cta_second_container .text-center h2 {
-  font-size: 2.25rem;
+  /* font-size: 2.25rem; */
+  font-size: clamp(1.4rem, 4cqi, 4rem);
   font-weight: 500;
   margin-bottom: 0.654rem;
   color: #fff;
